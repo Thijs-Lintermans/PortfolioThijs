@@ -1,1 +1,75 @@
-<p>nav works!</p>
+<nav class="bg-white shadow-lg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <!-- Logo/Brand -->
+      <div class="flex-shrink-0 flex items-center">
+        <a routerLink="/" class="text-xl font-bold text-gray-800 hover:text-blue-600 transition-colors duration-200">
+          Thijs Lintermans
+        </a>
+      </div>
+
+      <!-- Navigation Items - Now on the right -->
+      <div class="flex items-center">
+        <!-- Desktop Navigation -->
+        <div class="hidden sm:flex sm:space-x-8">
+          @for (item of navItems; track item.path) {
+            <a [routerLink]="item.path"
+               [routerLinkActive]="['text-blue-500', 'border-b-2', 'border-blue-500']"
+               [routerLinkActiveOptions]="{ exact: item.exact }"
+               class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-700 hover:text-blue-500 transition-colors duration-200 h-16">
+              {{ item.label }}
+            </a>
+          }
+          <!-- CV Download Button -->
+          <a href="assets/cv/CV_ThijsVanLoon.pdf" 
+             target="_blank"
+             class="inline-flex items-center px-4 py-2 border border-blue-600 rounded-md text-sm font-medium text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-200 my-auto">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Download CV
+          </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="flex items-center sm:hidden">
+          <button (click)="mobileMenuOpen = !mobileMenuOpen" type="button" 
+                  class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+            <span class="sr-only">Open main menu</span>
+            <!-- Icon when menu is closed -->
+            <svg *ngIf="!mobileMenuOpen" class="block h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <!-- Icon when menu is open -->
+            <svg *ngIf="mobileMenuOpen" class="block h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="sm:hidden" [class.hidden]="!mobileMenuOpen">
+    <div class="pt-2 pb-3 space-y-1">
+      @for (item of navItems; track item.path) {
+        <a [routerLink]="item.path"
+           [routerLinkActive]="['bg-blue-50', 'text-blue-500', 'border-l-4', 'border-blue-500']"
+           [routerLinkActiveOptions]="{ exact: item.exact }"
+           class="block pl-3 pr-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-blue-500 transition-colors duration-200">
+          {{ item.label }}
+        </a>
+      }
+      <!-- Mobile CV Download Button -->
+      <a href="assets/cv/CV_ThijsVanLoon.pdf" 
+         target="_blank"
+         class="block mx-4 mt-2 px-4 py-2 text-center border border-blue-600 rounded-md text-sm font-medium text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-200">
+        <svg class="w-4 h-4 mr-2 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+        Download CV
+      </a>
+    </div>
+  </div>
+</nav>

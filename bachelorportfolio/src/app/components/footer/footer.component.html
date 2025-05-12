@@ -1,1 +1,74 @@
-<p>footer works!</p>
+<footer class="bg-white border-t">
+  <!-- Main Footer Content -->
+  <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- About Section -->
+      <div class="col-span-2">
+        <h2 class="text-lg font-semibold text-gray-900 mb-4">Portfolio</h2>
+        <p class="text-gray-600 mb-4 max-w-md">
+          Student Toegepaste Informatica aan Thomas More. Gepassioneerd door web development en nieuwe technologieën.
+        </p>
+        <!-- Social Links -->
+        <div class="flex space-x-4">
+          @for (link of socialLinks; track link.name) {
+            <a [href]="link.url" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="text-gray-500 hover:text-blue-600 transition-colors duration-200"
+               [attr.aria-label]="'Bezoek mijn ' + link.name">
+              <span [innerHTML]="link.icon"></span>
+            </a>
+          }
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-sm font-semibold text-gray-900 tracking-wider uppercase mb-4">
+          Snelle Links
+        </h3>
+        <ul class="space-y-3">
+          @for (link of quickLinks; track link.name) {
+            <li>
+              <a [routerLink]="link.path" 
+                 class="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+                {{ link.name }}
+              </a>
+            </li>
+          }
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-sm font-semibold text-gray-900 tracking-wider uppercase mb-4">
+          Contact
+        </h3>
+        <ul class="space-y-3 text-gray-600">
+          <li class="flex items-center">
+            <svg class="w-5 h-5 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <a href="mailto:your.email&#64;example.com" class="hover:text-blue-600 transition-colors duration-200">
+              your.email&#64;example.com
+            </a>
+          </li>
+          <li class="flex items-center">
+            <svg class="w-5 h-5 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            <span>Geel, België</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="mt-8 pt-8 border-t border-gray-200">
+      <p class="text-center text-gray-500 text-sm">
+        © {{ currentYear }} Portfolio. Alle rechten voorbehouden.
+      </p>
+    </div>
+  </div>
+</footer>
