@@ -3,64 +3,10 @@
   <div class="max-w-6xl mx-auto px-4">
     <h1 class="text-4xl font-bold text-[#8fc0a9] mb-8">Projecten</h1>
     
-    <!-- Projects Grid -->
-    <div class="grid md:grid-cols-2 gap-8">
-      <!-- Project Card 1 -->
-      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-1">
-        <div class="aspect-w-16 aspect-h-9 bg-[#a0aecd]/30">
-          <!-- Project Image Placeholder -->
-          <div class="w-full h-48 bg-[#a0aecd]/30"></div>
-        </div>
-        <div class="p-6">
-          <h2 class="text-2xl font-semibold text-[#8fc0a9] mb-2">Project 1</h2>
-          <p class="text-[#000000] mb-4">
-            Een innovatief project dat gebruik maakt van moderne technologieën om gebruikerservaringen te verbeteren...
-          </p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-3 py-1 bg-[#a0aecd]/10 text-[#8fc0a9] rounded-full text-sm">Angular</span>
-            <span class="px-3 py-1 bg-[#a0aecd]/10 text-[#8fc0a9] rounded-full text-sm">TypeScript</span>
-            <span class="px-3 py-1 bg-[#a0aecd]/10 text-[#8fc0a9] rounded-full text-sm">TailwindCSS</span>
-          </div>
-          <a href="#" class="inline-flex items-center text-[#a0aecd] hover:text-[#8fc0a9] transition-colors duration-200">
-            Meer details
-            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Project Card 2 -->
-      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-1">
-        <div class="aspect-w-16 aspect-h-9 bg-[#a0aecd]/30">
-          <!-- Project Image Placeholder -->
-          <div class="w-full h-48 bg-[#a0aecd]/30"></div>
-        </div>
-        <div class="p-6">
-          <h2 class="text-2xl font-semibold text-[#8fc0a9] mb-2">Project 2</h2>
-          <p class="text-[#000000] mb-4">
-            Een geavanceerd systeem dat data-analyse combineert met moderne web technologieën...
-          </p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-3 py-1 bg-[#a0aecd]/10 text-[#8fc0a9] rounded-full text-sm">React</span>
-            <span class="px-3 py-1 bg-[#a0aecd]/10 text-[#8fc0a9] rounded-full text-sm">Node.js</span>
-            <span class="px-3 py-1 bg-[#a0aecd]/10 text-[#8fc0a9] rounded-full text-sm">MongoDB</span>
-          </div>
-          <a href="#" class="inline-flex items-center text-[#a0aecd] hover:text-[#8fc0a9] transition-colors duration-200">
-            Meer details
-            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-    
     <!-- Project Categories -->
-    <div class="mt-12">
-      <h2 class="text-2xl font-semibold text-[#8fc0a9] mb-6">Project Categorieën</h2>
+    <div class="mb-12">
       <div class="grid md:grid-cols-3 gap-6">
-        <!-- Category Card -->
+        <!-- Web Development Category -->
         <div class="bg-white rounded-xl shadow-lg p-6 transition-transform duration-300 hover:-translate-y-1 border border-transparent hover:border-[#8fc0a9]">
           <div class="text-[#a0aecd] mb-4">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -69,8 +15,129 @@
           </div>
           <h3 class="text-xl font-semibold text-[#000000] mb-2">Web Development</h3>
           <p class="text-[#000000]">
-            Beschrijving van web development projecten...
+            Projecten gericht op het ontwikkelen van webapplicaties met PHP, HTML/CSS en JavaScript.
           </p>
+        </div>
+
+        <!-- IoT & Hardware Category -->
+        <div class="bg-white rounded-xl shadow-lg p-6 transition-transform duration-300 hover:-translate-y-1 border border-transparent hover:border-[#8fc0a9]">
+          <div class="text-[#a0aecd] mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-[#000000] mb-2">IoT & Hardware</h3>
+          <p class="text-[#000000]">
+            Projecten die hardware en software combineren, zoals Arduino en sensoren.
+          </p>
+        </div>
+
+        <!-- AI & Data Category -->
+        <div class="bg-white rounded-xl shadow-lg p-6 transition-transform duration-300 hover:-translate-y-1 border border-transparent hover:border-[#8fc0a9]">
+          <div class="text-[#a0aecd] mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-[#000000] mb-2">AI & Data</h3>
+          <p class="text-[#000000]">
+            Projecten die gebruik maken van kunstmatige intelligentie en data-analyse.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Projects Grid -->
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Project Card 1 -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-1">
+        <div class="aspect-w-16 aspect-h-9">
+          <img src="assets/images/muizenval.jpg" alt="Muizenval Project" class="w-full h-48 object-cover">
+        </div>
+        <div class="p-6">
+          <h2 class="text-2xl font-semibold text-[#8fc0a9] mb-2">Muizenval</h2>
+          <p class="text-[#000000] mb-4">
+            Een slimme muizenval die automatisch sluit wanneer er een muis wordt gedetecteerd. 
+            Het project combineert IoT-technologie met AI om een efficiënte en humane manier van muizenbestrijding te realiseren.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 bg-[#a0aecd]/10 text-[#8fc0a9] rounded-full text-sm">IoT</span>
+            <span class="px-3 py-1 bg-[#a0aecd]/10 text-[#8fc0a9] rounded-full text-sm">Arduino</span>
+            <span class="px-3 py-1 bg-[#a0aecd]/10 text-[#8fc0a9] rounded-full text-sm">AI</span>
+            <span class="px-3 py-1 bg-[#a0aecd]/10 text-[#8fc0a9] rounded-full text-sm">Web Development</span>
+          </div>
+          <button (click)="openProjectDetails('muizenval')" class="inline-flex items-center text-[#a0aecd] hover:text-[#8fc0a9] transition-colors duration-200">
+            Meer details
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Project Card 2 -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-1">
+        <div class="aspect-w-16 aspect-h-9">
+          <img src="assets/images/wtc_roland.png" alt="WTCRoland Project" class="w-full h-48 object-cover">
+        </div>
+        <div class="p-6">
+          <h2 class="text-2xl font-semibold text-[#8fc0a9] mb-2">WTCRoland</h2>
+          <p class="text-[#000000] mb-4">
+            Een webapplicatie ontwikkeld voor de wielerclub WTCRoland om hun jaarlijkse ploegentijdrit te organiseren. 
+            Dit groepsproject werd uitgevoerd met zes teamleden voor het vak Project PHP.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 bg-[#a0aecd]/10 text-[#8fc0a9] rounded-full text-sm">PHP</span>
+            <span class="px-3 py-1 bg-[#a0aecd]/10 text-[#8fc0a9] rounded-full text-sm">MySQL</span>
+            <span class="px-3 py-1 bg-[#a0aecd]/10 text-[#8fc0a9] rounded-full text-sm">HTML/CSS</span>
+            <span class="px-3 py-1 bg-[#a0aecd]/10 text-[#8fc0a9] rounded-full text-sm">JavaScript</span>
+          </div>
+          <button (click)="openProjectDetails('wtcroland')" class="inline-flex items-center text-[#a0aecd] hover:text-[#8fc0a9] transition-colors duration-200">
+            Meer details
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Project Details Modal -->
+<div *ngIf="showModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+    <div class="p-6">
+      <!-- Modal Header -->
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-2xl font-semibold text-[#8fc0a9]">{{selectedProject?.title}}</h2>
+        <button (click)="closeProjectDetails()" class="text-gray-500 hover:text-gray-700">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Modal Content -->
+      <div class="space-y-4">
+        <img [src]="selectedProject?.image" [alt]="selectedProject?.title" class="w-full h-64 object-cover rounded-lg">
+        
+        <div class="flex flex-wrap gap-2">
+          <span *ngFor="let tech of selectedProject?.technologies" 
+                class="px-3 py-1 bg-[#a0aecd]/10 text-[#8fc0a9] rounded-full text-sm">
+            {{tech}}
+          </span>
+        </div>
+
+        <div class="prose max-w-none">
+          <h3 class="text-xl font-semibold text-[#000000] mb-2">Over het project</h3>
+          <p class="text-[#000000]">{{selectedProject?.description}}</p>
+          
+          <h3 class="text-xl font-semibold text-[#000000] mt-6 mb-2">Technische details</h3>
+          <p class="text-[#000000]">{{selectedProject?.technicalDetails}}</p>
+          
+          <h3 class="text-xl font-semibold text-[#000000] mt-6 mb-2">Mijn rol</h3>
+          <p class="text-[#000000]">{{selectedProject?.myRole}}</p>
         </div>
       </div>
     </div>
