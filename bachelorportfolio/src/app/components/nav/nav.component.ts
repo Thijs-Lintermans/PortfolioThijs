@@ -13,8 +13,8 @@ export class NavComponent {
   
   navItems = [
     { path: '/', label: 'Home', exact: true },
-    { path: '/about', label: 'About Me', exact: false },
-    { path: '/internship', label: 'Internship', exact: false },
-    { path: '/projects', label: 'Projects', exact: false }
+    { path: '/about', label: 'Over Mij', exact: false },
+    { path: '/internship', label: 'Stage', exact: false },
+    { path: '/projects', label: 'Projecten', exact: false }
   ];
 }
