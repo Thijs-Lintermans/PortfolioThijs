@@ -13,7 +13,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
           </div>
-          <h3 class="text-xl font-semibold text-[#000000] mb-2">Web Development</h3>
+          <h3 class="text-xl font-semibold text-[#8fc0a9] mb-2">Web Development</h3>
           <p class="text-[#000000]">
             Projecten gericht op het ontwikkelen van webapplicaties met PHP, HTML/CSS en JavaScript.
           </p>
@@ -26,7 +26,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
           </div>
-          <h3 class="text-xl font-semibold text-[#000000] mb-2">IoT & Hardware</h3>
+          <h3 class="text-xl font-semibold text-[#8fc0a9] mb-2">IoT & Hardware</h3>
           <p class="text-[#000000]">
             Projecten die hardware en software combineren, zoals Arduino en sensoren.
           </p>
@@ -39,7 +39,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
             </svg>
           </div>
-          <h3 class="text-xl font-semibold text-[#000000] mb-2">AI & Data</h3>
+          <h3 class="text-xl font-semibold text-[#8fc0a9] mb-2">AI & Data</h3>
           <p class="text-[#000000]">
             Projecten die gebruik maken van kunstmatige intelligentie en data-analyse.
           </p>
@@ -100,44 +100,80 @@
           </button>
         </div>
       </div>
+
+      <!-- Project Card 3 -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-1">
+        <div class="aspect-w-16 aspect-h-9">
+          <img src="assets/images/Aitris_Dashboard.png" alt="Aitris Project" class="w-full h-48 object-cover">
+        </div>
+        <div class="p-6">
+          <h2 class="text-2xl font-semibold text-[#8fc0a9] mb-2">Aitris</h2>
+          <p class="text-[#000000] mb-4">
+            Geavanceerd monitoringsdashboard voor ANPR-systemen bij Cipal Schaubroeck. Biedt real-time alerts, 
+            historische data analyse, SLA metrics visualisatie en geautomatiseerde probleemdetectie voor efficiënt 
+            beheer van verkeers- en parkeerbeheer systemen.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 bg-[#a0aecd]/10 text-[#8fc0a9] rounded-full text-sm">Angular</span>
+            <span class="px-3 py-1 bg-[#a0aecd]/10 text-[#8fc0a9] rounded-full text-sm">TypeScript</span>
+            <span class="px-3 py-1 bg-[#a0aecd]/10 text-[#8fc0a9] rounded-full text-sm">REST API</span>
+            <span class="px-3 py-1 bg-[#a0aecd]/10 text-[#8fc0a9] rounded-full text-sm">Monitoring</span>
+          </div>
+          <button (click)="openProjectDetails('aitris')" class="inline-flex items-center text-[#a0aecd] hover:text-[#8fc0a9] transition-colors duration-200">
+            Meer details
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- Project Details Modal -->
-<div *ngIf="showModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-  <div class="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+<!-- Project Detail Modal -->
+<div *ngIf="selectedProject" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+  <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
     <div class="p-6">
-      <!-- Modal Header -->
-      <div class="flex justify-between items-center mb-4">
-        <h2 class="text-2xl font-semibold text-[#8fc0a9]">{{selectedProject?.title}}</h2>
-        <button (click)="closeProjectDetails()" class="text-gray-500 hover:text-gray-700">
+      <div class="flex justify-between items-start mb-6">
+        <h2 class="text-2xl font-semibold text-[#8fc0a9]">{{selectedProject.title}}</h2>
+        <button (click)="closeProjectDetails()" class="text-[#a0aecd] hover:text-[#8fc0a9]">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
+      
+      <div class="aspect-w-16 aspect-h-9 mb-6">
+        <img [src]="selectedProject.image" [alt]="selectedProject.title" class="w-full h-64 object-cover rounded-lg">
+      </div>
 
-      <!-- Modal Content -->
-      <div class="space-y-4">
-        <img [src]="selectedProject?.image" [alt]="selectedProject?.title" class="w-full h-64 object-cover rounded-lg">
-        
-        <div class="flex flex-wrap gap-2">
-          <span *ngFor="let tech of selectedProject?.technologies" 
-                class="px-3 py-1 bg-[#a0aecd]/10 text-[#8fc0a9] rounded-full text-sm">
-            {{tech}}
-          </span>
+      <div class="flex flex-wrap gap-2 mb-6">
+        <span *ngFor="let tech of selectedProject.technologies" 
+              class="px-3 py-1 bg-[#a0aecd]/10 text-[#8fc0a9] rounded-full text-sm">
+          {{tech}}
+        </span>
+      </div>
+
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-semibold text-[#8fc0a9] mb-2">Beschrijving</h3>
+          <p class="text-[#000000]">{{selectedProject.description}}</p>
         </div>
 
-        <div class="prose max-w-none">
-          <h3 class="text-xl font-semibold text-[#000000] mb-2">Over het project</h3>
-          <p class="text-[#000000]">{{selectedProject?.description}}</p>
-          
-          <h3 class="text-xl font-semibold text-[#000000] mt-6 mb-2">Technische details</h3>
-          <p class="text-[#000000]">{{selectedProject?.technicalDetails}}</p>
-          
-          <h3 class="text-xl font-semibold text-[#000000] mt-6 mb-2">Mijn rol</h3>
-          <p class="text-[#000000]">{{selectedProject?.myRole}}</p>
+        <div>
+          <h3 class="text-lg font-semibold text-[#8fc0a9] mb-2">Technische Details</h3>
+          <p class="text-[#000000]">{{selectedProject.technicalDetails}}</p>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold text-[#8fc0a9] mb-2">Mijn Rol</h3>
+          <p class="text-[#000000]">{{selectedProject.myRole}}</p>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold text-[#8fc0a9] mb-2">Wat ik heb geleerd</h3>
+          <p class="text-[#000000]">{{selectedProject.learned}}</p>
         </div>
       </div>
     </div>
