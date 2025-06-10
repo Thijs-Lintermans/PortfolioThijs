@@ -6,11 +6,10 @@ import { RouterLink } from '@angular/router';
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule, RouterLink],
-  templateUrl: './home.component.html'
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  // You can update this path later with your actual image
-  profileImage = 'assets/images/profile-placeholder.jpg';
   showScrollButton = false;
 
   @HostListener('window:scroll', [])

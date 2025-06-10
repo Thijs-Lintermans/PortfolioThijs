@@ -1,12 +1,9 @@
-<!-- Hero Section -->
 <div class="min-h-screen bg-gray-50 py-12">
   <div class="max-w-6xl mx-auto px-4">
     <h1 class="text-4xl font-bold text-[#8fc0a9] mb-8">Projecten</h1>
     
-    <!-- Project Categories -->
     <div class="mb-12">
       <div class="grid md:grid-cols-3 gap-6">
-        <!-- Web Development Category -->
         <div class="bg-white rounded-xl shadow-lg p-6 transition-transform duration-300 hover:-translate-y-1 border border-transparent hover:border-[#8fc0a9]">
           <div class="text-[#a0aecd] mb-4">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -19,7 +16,6 @@
           </p>
         </div>
 
-        <!-- IoT & Hardware Category -->
         <div class="bg-white rounded-xl shadow-lg p-6 transition-transform duration-300 hover:-translate-y-1 border border-transparent hover:border-[#8fc0a9]">
           <div class="text-[#a0aecd] mb-4">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -32,7 +28,6 @@
           </p>
         </div>
 
-        <!-- AI & Data Category -->
         <div class="bg-white rounded-xl shadow-lg p-6 transition-transform duration-300 hover:-translate-y-1 border border-transparent hover:border-[#8fc0a9]">
           <div class="text-[#a0aecd] mb-4">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -46,10 +41,8 @@
         </div>
       </div>
     </div>
-    
-    <!-- Projects Grid -->
+
     <div class="grid md:grid-cols-2 gap-8">
-      <!-- Project Card 1 -->
       <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-1">
         <div class="aspect-w-16 aspect-h-9">
           <img src="assets/images/muizenval.jpg" alt="Muizenval Project" class="w-full h-48 object-cover">
@@ -75,7 +68,6 @@
         </div>
       </div>
 
-      <!-- Project Card 2 -->
       <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-1">
         <div class="aspect-w-16 aspect-h-9">
           <img src="assets/images/wtc_roland.png" alt="WTCRoland Project" class="w-full h-48 object-cover">
@@ -101,7 +93,6 @@
         </div>
       </div>
 
-      <!-- Project Card 3 -->
       <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-1">
         <div class="aspect-w-16 aspect-h-9">
           <img src="assets/images/Aitris_Dashboard.png" alt="Aitris Project" class="w-full h-48 object-cover">
@@ -131,8 +122,8 @@
   </div>
 </div>
 
-<!-- Project Detail Modal -->
-<div *ngIf="selectedProject" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+@if (selectedProject) {
+<div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
   <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
     <div class="p-6">
       <div class="flex justify-between items-start mb-6">
@@ -179,8 +170,8 @@
     </div>
   </div>
 </div>
+}
 
-<!-- Scroll to Top Button -->
 <button 
   (click)="scrollToTop()"
   class="fixed bottom-8 right-8 bg-[#a0aecd] hover:bg-[#8fc0a9] text-white p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible"

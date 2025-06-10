@@ -1,28 +1,39 @@
 <nav class="bg-white shadow-lg">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-16">
-      <!-- Logo/Brand -->
       <div class="flex-shrink-0 flex items-center">
         <a routerLink="/" class="flex items-center">
           <span class="text-2xl font-lora font-bold tracking-wide bg-gradient-to-r from-[#8fc0a9] to-[#a0aecd] bg-clip-text text-transparent">Thijs Lintermans</span>
         </a>
       </div>
 
-      <!-- Desktop Navigation Items (Centered) -->
       <div class="hidden sm:flex items-center justify-center flex-grow">
         <div class="flex space-x-8">
-          @for (item of navItems; track item.path) {
-            <a [routerLink]="item.path"
-               [routerLinkActive]="['text-[#a0aecd]', 'border-b-2', 'border-[#a0aecd]']"
-               [routerLinkActiveOptions]="{ exact: item.exact }"
-               class="inline-flex items-center px-1 pt-1 text-sm font-medium text-[#000000] hover:text-[#a0aecd] transition-colors duration-200 h-16">
-              {{ item.label }}
-            </a>
-          }
+          <a routerLink="/" 
+            routerLinkActive="text-[#a0aecd] border-b-2 border-[#a0aecd]" 
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="inline-flex items-center px-1 pt-1 text-sm font-medium text-[#000000] hover:text-[#a0aecd] transition-colors duration-200 h-16">
+            Home
+          </a>
+          <a routerLink="/about" 
+            routerLinkActive="text-[#a0aecd] border-b-2 border-[#a0aecd]"
+            class="inline-flex items-center px-1 pt-1 text-sm font-medium text-[#000000] hover:text-[#a0aecd] transition-colors duration-200 h-16">
+            Over Mij
+          </a>
+              <a routerLink="/internship" 
+            routerLinkActive="text-[#a0aecd] border-b-2 border-[#a0aecd]"
+            class="inline-flex items-center px-1 pt-1 text-sm font-medium text-[#000000] hover:text-[#a0aecd] transition-colors duration-200 h-16">
+            Stage
+          </a>
+          <a routerLink="/projects" 
+            routerLinkActive="text-[#a0aecd] border-b-2 border-[#a0aecd]"
+            class="inline-flex items-center px-1 pt-1 text-sm font-medium text-[#000000] hover:text-[#a0aecd] transition-colors duration-200 h-16">
+            Projecten
+          </a>
         </div>
       </div>
 
-      <!-- CV Download Button (Right Aligned - Desktop) -->
+
       <div class="hidden sm:flex items-center">
          <a href="assets/documents/stage/Thijs Lintermans-CV.pdf" 
              target="_blank"
@@ -35,36 +46,49 @@
           </a>
       </div>
 
-      <!-- Mobile menu button -->
       <div class="flex items-center sm:hidden">
         <button (click)="mobileMenuOpen = !mobileMenuOpen" type="button" 
                 class="inline-flex items-center justify-center p-2 rounded-md text-[#000000] hover:text-[#a0aecd] hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#a0aecd]">
           <span class="sr-only">Open main menu</span>
-          <!-- Icon when menu is closed -->
-          <svg *ngIf="!mobileMenuOpen" class="block h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          @if (!mobileMenuOpen) {
+          <svg class="block h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
-          <!-- Icon when menu is open -->
-          <svg *ngIf="mobileMenuOpen" class="block h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          }
+          @if (mobileMenuOpen) {
+          <svg class="block h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
+          }
         </button>
       </div>
     </div>
   </div>
 
-  <!-- Mobile menu -->
   <div class="sm:hidden" [class.hidden]="!mobileMenuOpen">
     <div class="pt-2 pb-3 space-y-1">
-      @for (item of navItems; track item.path) {
-        <a [routerLink]="item.path"
-           [routerLinkActive]="['bg-[#a0aecd]/10', 'text-[#a0aecd]', 'border-l-4', 'border-[#a0aecd]']"
-           [routerLinkActiveOptions]="{ exact: item.exact }"
-           class="block pl-3 pr-4 py-2 text-base font-medium text-[#000000] hover:bg-gray-50 hover:text-[#a0aecd] transition-colors duration-200">
-          {{ item.label }}
-        </a>
-      }
-      <!-- Mobile CV Download Button -->
+      <a routerLink="/" 
+        routerLinkActive="bg-[#a0aecd]/10 text-[#a0aecd] border-l-4 border-[#a0aecd]" 
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="block pl-3 pr-4 py-2 text-base font-medium text-[#000000] hover:bg-gray-50 hover:text-[#a0aecd] transition-colors duration-200">
+        Home
+      </a>
+      <a routerLink="/about" 
+        routerLinkActive="bg-[#a0aecd]/10 text-[#a0aecd] border-l-4 border-[#a0aecd]" 
+        class="block pl-3 pr-4 py-2 text-base font-medium text-[#000000] hover:bg-gray-50 hover:text-[#a0aecd] transition-colors duration-200">
+        Over Mij
+      </a>
+      <a routerLink="/internship" 
+        routerLinkActive="bg-[#a0aecd]/10 text-[#a0aecd] border-l-4 border-[#a0aecd]" 
+        class="block pl-3 pr-4 py-2 text-base font-medium text-[#000000] hover:bg-gray-50 hover:text-[#a0aecd] transition-colors duration-200">
+        Stage
+      </a>
+      <a routerLink="/projects" 
+        routerLinkActive="bg-[#a0aecd]/10 text-[#a0aecd] border-l-4 border-[#a0aecd]" 
+        class="block pl-3 pr-4 py-2 text-base font-medium text-[#000000] hover:bg-gray-50 hover:text-[#a0aecd] transition-colors duration-200">
+        Projecten
+      </a>
+
       <a href="assets/cv/Thijs Lintermans-CV.pdf" 
          target="_blank"
          download="Thijs Lintermans-CV.pdf"
