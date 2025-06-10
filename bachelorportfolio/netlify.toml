@@ -1,12 +1,11 @@
 [build]
-  command = "npm run build && xcopy /E /I /Y dist\\* ."
-  publish = "."
+  command = "npm run build"
+  publish = "dist"
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-  force = true
 
 [[headers]]
   for = "/*"
